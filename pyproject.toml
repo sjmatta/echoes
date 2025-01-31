@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.pylint.main]
+py-version = "3.12"  # adjust to your version
+source-roots = ["src"]
