@@ -2,5 +2,38 @@
 pythonpath = ["src"]
 
 [tool.pylint.main]
-py-version = "3.12"  # adjust to your version
-source-roots = ["src"]
+source-roots = ["src/"]
+
+[project]
+name = "echoes"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Stephen Matta",email = "stephenjmatta+github@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = "^3.12"
+dependencies = [
+    "textual (>=1.0.0,<2.0.0)",
+    "sounddevice (>=0.5.1,<0.6.0)",
+    "soundfile (>=0.13.1,<0.14.0)",
+    "faster-whisper (>=1.1.1,<2.0.0)",
+    "pyannote-audio (>=3.3.2,<4.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pytest = "^7.4.0"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

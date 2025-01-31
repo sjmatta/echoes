@@ -8,7 +8,7 @@ def check_gpu_availability():
     """Check if GPU is available and properly configured."""
     try:
         if torch.cuda.is_available():
-            torch.tensor([1.0], device='cuda')
+            torch.tensor([1.0], device="cuda")
             return "cuda"
     except Exception as e:
         print(f"GPU detected but CUDA initialization failed: {e}")
